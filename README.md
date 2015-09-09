@@ -6,8 +6,23 @@ Just call function ageCalculator(Date, format), Date parameter must be DateTime 
 
 <strong>Examples;</strong>
 
-ageCalculator( new DateTime('1982-07-24') );
+ageCalculator( new DateTime('1982-07-24') ); //33 years, 1 month and 9 days
+
 If you are using laravel then it is more easy with Carbon like ageCalculator( new Carbon('1982-07-24') );
+
+ageCalculator( new DateTime('1982-07-24'), 'd' ); //1201
+
+ageCalculator( new DateTime('1982-07-24'), 'D' ); //1201 days
+
+ageCalculator( new DateTime('1982-07-24'), '%m' ); //1
+
+ageCalculator( new DateTime('1982-07-24'), '%M' ); //1 month
+
+ageCalculator( new DateTime('1982-07-24'), '%y y, %m m and %d days old' ); //33 y, 1 m and 9 days old
+
+ageCalculator( new DateTime('1982-07-24'), '%Y, %M and %D old' ); //33 years, 1 month and 9 days old
+
+
 
 #### Possible Formats
 d -- It returns total number of days in numeric.
