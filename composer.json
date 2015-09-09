@@ -1,7 +1,7 @@
 {
     "name": "age-calculator/age-calculator",
     "type": "helper",
-    "description": "Logging for PHP >= 4.2",
+    "description": "Calculate age by date of birth",
     "keywords": ["age","calculator", "age calculator", "dob", "date of birth"],
     "homepage": "https://github.com/farhanwazir/CalculateAge",
     "license": "MIT",
