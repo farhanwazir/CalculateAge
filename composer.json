@@ -1,0 +1,24 @@
+{
+    "name": "ageCalculator/ageCalculator",
+    "type": "helper",
+    "description": "Logging for PHP >= 4.2",
+    "keywords": ["age","calculator", "age calculator", "dob", "date of birth"],
+    "homepage": "https://github.com/farhanwazir/CalculateAge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Farhan Wazir",
+            "email": "seejee1@gmail.com",
+            "homepage": "https://github.com/farhanwazir",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=4.2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Monolog": "src"
+        }
+    }
+}
