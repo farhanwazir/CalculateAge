@@ -12,18 +12,18 @@ function ageCalculator(DateTime $born, $format = 'full'){
     // parts using either ',' or 'and' appropriately
     switch($format){
         case 'full':
-            $age = ($d = $diff->d) ? ' and '.$d.' '.str_plural('day', $d) : '';
-            $age = ($m = $diff->m) ? ($age ? ', ' : ' and ').$m.' '.str_plural('month', $m).$age : $age;
-            $age = ($y = $diff->y) ? $y.' '.str_plural('year', $y).$age  : $age;
+            $age = ($d = $diff->d) ? ' and '. ngettext('%d day', '%d days', $d) : '';
+            $age = ($m = $diff->m) ? ($age ? ', ' : ' and '). ngettext('%d month', '%d months', $m).$age : $age;
+            $age = ($y = $diff->y) ? ngettext('%d year', '%d years', $y).$age  : $age;
             break;
         case 'M':
-            $age = $total_months . ' ' . str_plural('month', $total_months);
+            $age = $total_months . ' ' . ngettext('%d month', '%d months', $total_months);
             break;
         case 'D':
-            $age = $total_days . ' ' . str_plural('day', $total_days);
+            $age = $total_days . ' ' . ngettext('%d day', '%d days', $total_days);
             break;
         case 'Y':
-            $age = $total_years . ' ' . str_plural('year', $total_years);
+            $age = $total_years . ' ' . ngettext('%d year', '%d years', $total_years);
             break;
         case 'm':
             $age = $total_months;
@@ -35,7 +35,7 @@ function ageCalculator(DateTime $born, $format = 'full'){
             $age = $total_years;
             break;
         default:
-            $age = str_replace(['%y', '%m', '%d'], [$diff->y, $diff->m, $diff->d], str_replace(['%Y', '%M', '%D'], [$diff->y . ' ' . str_plural('year', $diff->y), $diff->m . ' ' . str_plural('month', $diff->m), $diff->d . ' ' . str_plural('day', $diff->m)], $format));
+            $age = str_replace(['%y', '%m', '%d'], [$diff->y, $diff->m, $diff->d], str_replace(['%Y', '%M', '%D'], [ngettext('%d year', '%d years', $diff->y), ngettext('%d month', '%d months', $diff->m), ngettext('%d day', '%d days', $diff->d)], $format));
             break;
     }
     return $age;
