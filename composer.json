@@ -1,5 +1,5 @@
 {
-    "name": "ageCalculator/ageCalculator",
+    "name": "age-calculator/age-calculator",
     "type": "helper",
     "description": "Logging for PHP >= 4.2",
     "keywords": ["age","calculator", "age calculator", "dob", "date of birth"],
