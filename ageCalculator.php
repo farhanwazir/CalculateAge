@@ -7,9 +7,6 @@ function ageCalculator(DateTime $born, $format = 'full'){
     $total_days = $diff->days;
     $total_months = ($diff->y * 12) + $diff->m;
     $total_years = $diff->y;
-
-    // Not very readable, but all it does is joining age
-    // parts using either ',' or 'and' appropriately
     switch($format){
         case 'full':
             $age = ($d = $diff->d) ? ' and '. ngettext('%d day', '%d days', $d) : '';
